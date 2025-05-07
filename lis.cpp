@@ -9,15 +9,13 @@ using namespace std;
 
 @return A vector containing the indices of the elements in the longest increasing subsequence.
 
-@note Time complexity: `O(nlog(n))`, where `n` is the number of elements in the total sequence.
+@note Time complexity: `O(n * log(n))`, where `n` is the number of elements in the total sequence.
 */
 vector<int> lis(vector<int>& nums) { 
-    // seq: stores the current ascending set of numbers
-    // idxs: stores the index of the corresponding numbers in seq
-    // parent: stores the index of the parent of a number/element
-    vector<int> seq, idxs, parent(nums.size(), -1);
+    vector<int> seq; // stores the current ascending set of numbers
+    vector<int> idxs; // stores the index of the corresponding numbers in seq
+    vector<int> parent(nums.size(), -1); // stores the index of the parent of a number/element
 
-    // this for-loop is O(nlog(n)) as we perform a binary search for each element in the sequence
     for (int i = 0; i < nums.size(); ++i) {
         // binary search to find index of the first number currently in the sequence,
         // that is not less than the candidate number nums[i]

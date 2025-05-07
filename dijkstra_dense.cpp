@@ -32,9 +32,9 @@ of nodes in the graph.
 */
 pair<vi, vi> dijkstra_dense(Graph& G, int st) { 
     int n = G.adj.size();
-    // dis: stores shorest distance from st to all nodes
-    // par: stores the parent node that is used to reach each node in its shortest path 
-    vi dis(n, INF), par(n, -1);
+
+    vi dis(n, INF); // stores shorest distance from st to all nodes
+    vi par(n, -1); //  stores the parent node that is used to reach each node in its shortest path
     vector<bool> vis(n, false);
 
     dis[st] = 0;

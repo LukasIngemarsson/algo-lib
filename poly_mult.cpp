@@ -13,7 +13,7 @@ typedef complex<double> cd;
 @param inv: A boolean value indicating if the inverse or regular FFT should be applied. 
 It defaults to `false`.
 
-@note Time complexity: `O(nlog(n))`, where `n` is the order of the polynomial.
+@note Time complexity: `O(n * log(n))`, where `n` is the order of the polynomial.
 @note The transform is done in-place, i.e., the input object `v` will be altered.
 */
 void fft(vector<cd>& v, bool inv=false) {
@@ -57,7 +57,7 @@ void fft(vector<cd>& v, bool inv=false) {
 
 @return The coefficients of the resulting polynomial.
 
-@note Time complexity: `O(nlog(n))`, where `n` is the order of the resulting polynomial.
+@note Time complexity: `O(n * log(n))`, where `n` is the order of the resulting polynomial.
 */
 vector<int> mult_poly(vector<int>& a, vector<int>& b) {
     /*

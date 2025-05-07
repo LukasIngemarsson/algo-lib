@@ -11,9 +11,8 @@ Union Find provides efficient union and find operations.
 @note Memory complexity: `O(n)`, where `n` is the number of elements.
 */
 struct UnionFind {
-    // parent: create a tree structure for each set, where an element points to a parent
-    // rank: stores the rank of a tree at the root index
-    vector<int> parent, rank;
+    vector<int> parent; // create a tree structure for each set, where an element points to a parent
+    vector<int> rank; // stores the rank of a tree at the root index
     
     UnionFind(int n) : parent(n), rank(n, 0) {
         for (int i = 0; i < n; ++i) {

@@ -74,6 +74,8 @@ where each entry contains (from, to, flow).
 
 @note Time complexity: `O(n * m ^ 2)`, where `n` is the number of nodes and `m`
 is the number of edges.
+@note The input Graph will be updated in-place, thus containing the final state of the graph
+after the algorithm is complete.
 */
 pair<int, vector<Edge>> max_flow(Graph& G, int s, int t) {
     int n = G.n;

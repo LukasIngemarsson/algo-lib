@@ -7,7 +7,7 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 #define INF 1e9
 
-// replace the parameters and logic of Edge and Graph depending on use case
+/* Replace the parameters and logic of Edge and Graph depending on use case. */
 
 struct Edge {
     int v, w;

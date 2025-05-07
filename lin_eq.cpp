@@ -21,9 +21,6 @@ using Gauss Elimination.
 and `m` is the number of variables. If `n` = `m`, it is `O(n^3)`.
 */
 pair<int, vd> solve_linear_eq(vector<vd> A, vd b) {
-    int n = A.size(), m = A[0].size();
-    vector<int> pivot_rows(m, -1); // stores the index of the pivot row for each column
-
     /*
     Manually solving an equation system with many variables and equations is impractical, 
     and thus a programmatic implementation of Gauss Eliminimation can be very helpful.
@@ -40,6 +37,8 @@ pair<int, vd> solve_linear_eq(vector<vd> A, vd b) {
     right side value, then the system is deemed inconsistent.
     */
 
+    int n = A.size(), m = A[0].size();
+    vector<int> pivot_rows(m, -1); // stores the index of the pivot row for each column
     for (int r = 0, c = 0; r < n && c < m; ++c) {
         // select the row with the largest absolute value
         int sel = r;
