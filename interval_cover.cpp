@@ -5,8 +5,8 @@ using namespace std;
 /*
 @brief Finds the minimal set of the given intervals that covers the desired target interval.
 
-@param target: A (start, end)-pair of the interval to be covered.
-@param intervals: A vector of interval (start, end)-pairs.
+@param target: A (start, end) pair of the interval to be covered.
+@param intervals: A vector of interval (start, end) pairs.
 
 @return A vector with the indices of the chosen intervals, if a valid solution exists.
 Otherwise, it returns an empty vector.

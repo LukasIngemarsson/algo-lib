@@ -7,7 +7,7 @@ using namespace std;
 maximizing the total value for the packed items.
 
 @param capacity: The capacity of the knapsack.
-@param items: A vector of item (weight, value)-pairs.
+@param items: A vector of item (weight, value) pairs.
 
 @return A vector with the indices of the items present in the optimal solution.
 
