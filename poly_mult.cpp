@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
 typedef complex<double> cd;
 #define PI acos(-1)
 

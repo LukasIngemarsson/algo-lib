@@ -14,9 +14,9 @@ struct Edge {
 
     Edge(int v, int w) : v(v), w(w) {}
 
-    int calc_weight(int t) {
-        // ...
-        return w;
+    int calc_weight(int t) { // custom weight (dependent on other parameters)
+        // int tot_w = ...
+        // return tot_w;
     }
 };
 
