@@ -6,28 +6,28 @@ typedef complex<double> cd;
 #define PI acos(-1)
 
 /*
-@brief Applies the Fast Fourier Transform (FFT) to the given polynomial.
+@brief Applies the Fast Fourier Transform (FFT) or its inverse on the given vector of complex numbers.
 
-@param v: A vector containing the polynomial's coefficients.
-@param inv: A boolean value indicating if the inverse or regular FFT should be applied. 
-It defaults to `false`.
+@param v: A vector of complex numbers (e.g., coefficients of a polynomial).
+@param inv: A boolean value indicating if the inverse (true) or regular (false) FFT should be applied. 
+It defaults to false.
 
-@note Time complexity: `O(n * log(n))`, where `n` is the order of the polynomial.
+@note Time complexity: `O(n * log(n))`, where `n` is the size of the vector.
 @note The transform is done in-place, i.e., the input object `v` will be altered.
 */
 void fft(vector<cd>& v, bool inv=false) {
     int n = v.size();
     if (n == 1) return; // cannot divide further
 
-    // divide polynomial into two smaller polynomials,
-    // one containing the coefficients at even indices,
+    // divide `v` into two parts,
+    // one containing the elements at even indices,
     // and the other containing those at odd indices
     vector<cd> a(n / 2), b(n / 2);
     for (int i = 0; i < n / 2; ++i) {
         a[i] = v[2 * i];
         b[i] = v[2 * i + 1];
     }
-    // then we recursively compute the FFT for the smaller polynomials
+    // then we recursively compute the FFT for the smaller vectors
     fft(a, inv);
     fft(b, inv);
 
