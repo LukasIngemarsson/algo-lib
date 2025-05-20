@@ -29,6 +29,21 @@ struct ModularArithmetic {
         return ((a % m) * (b % m)) % m;
     }
 
+    /* Bit-wise modular multiplication to avoid integer overflow. Time complexity: `O(log(b))`. */
+    ll bw_mult(ll a, ll b) {
+        ll res = 0;
+        a %= m;
+        b %= m;
+        while (b > 0) {
+            if (b & 1) {
+                res = (res + a) % m;
+            }
+            a = (a << 1) % m;
+            b >>= 1;
+        }
+        return res;
+    }
+
     /* Modular exponentation. Time complexity: `O(log(n))`.*/
     ll pow(ll a, ll n) {
         a %= m;
@@ -72,20 +87,5 @@ struct ModularArithmetic {
         ll inv_b = inv(b);
         if (inv_b == -1) return -1;
         return mult(a, inv_b);
-    }
-
-    /* Bit-wise modulus multiplication to avoid integer overflow. Time complexity: `O(log(b))`. */
-    ll bw_mult(ll a, ll b) {
-        ll res = 0;
-        a %= m;
-        b %= m;
-        while (b > 0) {
-            if (b & 1) {
-                res = (res + a) % m;
-            }
-            a = (a << 1) % m;
-            b >>= 1;
-        }
-        return res;
     }
 };
