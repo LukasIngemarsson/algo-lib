@@ -3,6 +3,7 @@
 using namespace std;
 
 typedef long long ll;
+#define SQRT_LL_MAX sqrt(LONG_MAX)
 
 /* A class for modular arithmetic operations. */
 struct ModularArithmetic {
@@ -79,7 +80,7 @@ public:
 private:
     /* Sets the multiplication type depending on if integer overflow is possible. */
     void assign_mult_type() {
-        if (this->m > sqrt(LONG_MAX)) {
+        if (m > SQRT_LL_MAX) {
             mult = [this] (ll a, ll b) { return this->bw_mult(a, b); };
         }
         else {
