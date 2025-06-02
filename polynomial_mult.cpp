@@ -58,7 +58,7 @@ void fft(vector<cd>& v, bool inv=false) {
 
 @note Time complexity: `O(n * log(n))`, where `n` is the order of the resulting polynomial.
 */
-vector<int> mult_poly(vector<int>& a, vector<int>& b) {
+vector<int> poly_mult(vector<int>& a, vector<int>& b) {
     /*
     The naive approach for polynomial multiplication takes `O(n^2)` time, as we have to
     multiply each pair of coefficients in the two polynomials. This can be improved 
