@@ -19,7 +19,6 @@ vector<int> knapsack(int capacity, vector<pair<int, int>>& items) {
     // i items (row) with a combined weight j (col)
     vector<vector<int>> dp(n + 1, vector<int>(capacity + 1));
 
-    // the nested for-loops below are O(n * capacity), as we fill the dp table
     for (int i = 0; i <= n; ++i) {
         for (int maxw = 0; maxw <= capacity; ++maxw) {
             if (i == 0 || maxw == 0) { // no item/weight
