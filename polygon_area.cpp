@@ -98,7 +98,14 @@ using the trapezoid formula.
 @note Time complexity: `O(n)`, where `n` is the number of vertices.
 */
 template <typename T>
-double polygon_area(const vector<Point<T>>& pts) {
+double polygon_area(const vector<Point<T>>& pts) {    
+    /*
+    The trapezoid formula works by taking the sum of the signed areas of the trapezoids
+    that can be formed by each polygon edge and the x-axis. Each edge is defined by 
+    consecutive vertices. We save the division by 2 until the sum is complete, to avoid 
+    unnecessary operations.
+    */
+   
     double res = 0;
     int n = pts.size();
 
