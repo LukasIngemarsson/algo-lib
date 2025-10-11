@@ -33,7 +33,7 @@ vector<pair<ll, int>> prime_factorize(ll n, const vector<ll>& primes) {
     return pfs;
 }
 
-void gen_divs(int idx, ll div, const vector<pair<ll, int>>& pfs, vector<ll>& divs) {
+void calc_divs_(int idx, ll div, const vector<pair<ll, int>>& pfs, vector<ll>& divs) {
     if (idx == pfs.size()) {
         divs.push_back(div);
         return;
@@ -41,7 +41,7 @@ void gen_divs(int idx, ll div, const vector<pair<ll, int>>& pfs, vector<ll>& div
 
     auto [p, exp] = pfs[idx];
     for (int i = 0; i <= exp; ++i) {
-        gen_divs(idx + 1, div, pfs, divs);
+        calc_divs_(idx + 1, div, pfs, divs);
         div *= p;
     }
 }
@@ -55,6 +55,6 @@ void gen_divs(int idx, ll div, const vector<pair<ll, int>>& pfs, vector<ll>& div
 */
 vector<ll> calc_divs(const vector<pair<ll, int>>& pfs) {
     vector<ll> divs;
-    gen_divs(0, 1, pfs, divs);
+    calc_divs_(0, 1, pfs, divs);
     return divs;
 }
