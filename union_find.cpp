@@ -26,15 +26,13 @@ struct UnionFind {
             return;
         }
         // decide which tree attaches to the other based on their rank
-        if (rank[a_root] < rank[b_root]) {
-            parent[a_root] = parent[b_root];
+        if (rank[a_root] <= rank[b_root]) {
+            if (rank[a_root] == rank[b_root])
+                ++rank[b_root];
+            parent[a_root] = b_root;
         }
         else if (rank[a_root] > rank[b_root]) {
-            parent[b_root] = parent[a_root];
-        }
-        else {
-            parent[a_root] = parent[b_root];
-            ++rank[b_root];
+            parent[b_root] = a_root;
         }
     }
 
