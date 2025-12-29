@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* 2D point class. Defaults to (0, 0) if x and y are not provided. */
 template<typename T>
 struct Point {
     T x, y;

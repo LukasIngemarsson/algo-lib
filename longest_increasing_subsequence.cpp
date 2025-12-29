@@ -2,15 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-@brief Finds the longest increasing subsequence for a given sequence of numbers.
-
-@param nums: The sequence of numbers.
-
-@return A vector containing the indices of the elements in the longest increasing subsequence.
-
-@note Time complexity: `O(n * log(n))`, where `n` is the number of elements in the total sequence.
-*/
 vector<int> lis(vector<int>& nums) { 
     vector<int> seq; // stores the current ascending set of numbers
     vector<int> idxs; // stores the index of the corresponding numbers in seq

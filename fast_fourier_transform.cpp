@@ -5,16 +5,6 @@ using namespace std;
 typedef complex<double> cd;
 #define PI acos(-1)
 
-/*
-@brief Applies the Fast Fourier Transform (FFT) or its inverse on the given vector of complex numbers.
-
-@param v: A vector of complex numbers (e.g., coefficients of a polynomial).
-@param inv: A boolean value indicating if the inverse (true) or regular (false) FFT should be applied. 
-It defaults to false.
-
-@note Time complexity: `O(n * log(n))`, where `n` is the size of the vector.
-@note The transform is done in-place, i.e., the input object `v` will be altered.
-*/
 void fft(vector<cd>& v, bool inv=false) {
     int n = v.size();
     if (n == 1) return; // cannot divide further

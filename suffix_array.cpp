@@ -2,30 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-@brief Suffix array. It sorts a provided string's suffixes 
-in lexicographical order, storing the starting index of each 
-suffix in the sorted array.
-
-@note Time complexity (initialization): `O(n * log(n))`, where `n` 
-is the length of the string.
-@note Memory complexity: `O(n)`, where `n` is the length of the string.
-*/
 struct SuffixArray {
-    /*
-    The naive approach is to get all suffixes and sort them using quicksort or
-    mergesort, while retaining their original indices. Sorting would on 
-    average take `O(n * log(n))` time, and the comparison of two strings `O(n)` time,
-    granting a total complexity of `O(n^2 * log(n))` (where `n` is the string length).
-
-    The suffix array can be formed in `O(n * log(n))`. This is done by sorting suffixes
-    by their prefixes iteratively, first with prefix length 1, then 2, 4, ..., up to `n`,
-    where we can continously reuse the sorting results from previous iterations.
-
-    A major benefit with the suffix array compared to the suffix trie/tree, is that it 
-    does not save the suffixes themselves, but rather the index at which they begin
-    in the original string, making it more memory efficient.
-    */
     vector<int> arr;
 
     SuffixArray(string s) {
@@ -103,25 +80,6 @@ struct SuffixArray {
         arr.erase(arr.begin()); // remove symbol
     }
 
-    /* @brief Prints the suffix array. */
-    void print() {
-        cout << "suffix array: ";
-        for (int a : arr) {
-            cout << a << " ";
-        }
-        cout << '\n';
-    }
-
-    /*
-    @brief Retrieves the starting index of the suffix ranked at the
-    given index/rank in the suffix array.
-
-    @param i: The index/rank of the suffix.
-
-    @return The starting index of the suffix in the original string.
-
-    @note Time complexity: `O(1)`.
-    */
     int get_suffix(int i) {
         return arr[i];
     }

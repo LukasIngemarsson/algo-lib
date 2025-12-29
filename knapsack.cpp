@@ -2,17 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-@brief Finds the optimal way to fill a capacity limited knapsack, 
-maximizing the total value for the packed items.
-
-@param capacity: The capacity of the knapsack.
-@param items: A vector of item (weight, value) pairs.
-
-@return A vector with the indices of the items present in the optimal solution.
-
-@note Time complexity: `O(n * capacity)`, where `n` is the number of items.
-*/
 vector<int> knapsack(int capacity, vector<pair<int, int>>& items) {
     int n = items.size();
     // dp table that stores the max combined value for placing 

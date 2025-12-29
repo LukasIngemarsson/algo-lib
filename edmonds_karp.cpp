@@ -60,24 +60,7 @@ int bfs(Graph& G, int s, int t, vi& par) {
     return 0;
 }
 
-/*
-@brief Finds the maximum flow from a given source to sink node in the 
-provided graph, using the Edmonds-Karp algorithm. Edmonds-Karp is an implementation
-of Ford-Fulkerson that uses BFS to find augmenting paths.
-
-@param G: The graph.
-@param s: The source node.
-@param t: The sink node.
-
-@return A pair containing 1. the maximum flow, and 2. the edges used in the flow graph, 
-where each entry contains (from, to, flow).
-
-@note Time complexity: `O(n * m ^ 2)`, where `n` is the number of nodes and `m`
-is the number of edges.
-@note The input Graph will be updated in-place, thus containing the final state of the graph
-after the algorithm is complete.
-*/
-pair<int, vector<Edge>> max_flow(Graph& G, int s, int t) {
+pair<int, vector<Edge>> edmonds_karp(Graph& G, int s, int t) {
     int n = G.n;
     vi par(n); // parent of each node in the path
     vvi flows(n, vi(n)); // flow of each edge

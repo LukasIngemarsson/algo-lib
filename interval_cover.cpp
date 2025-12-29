@@ -2,18 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-@brief Finds the minimal set of the given intervals that covers the desired target interval.
-
-@param target: A (start, end) pair of the interval to be covered.
-@param intervals: A vector of interval (start, end) pairs.
-
-@return A vector with the indices of the chosen intervals, if a valid solution exists.
-Otherwise, it returns an empty vector.
-
-@note Time complexity: `O(n * log(n))`, where `n` is the number of intervals.
-*/
-vector<int> cover(pair<double, double> target, vector<vector<double>> intervals) {
+vector<int> interval_cover(pair<double, double> target, vector<vector<double>> intervals) {
     sort(intervals.begin(), intervals.end());
 
     double curr_cov = target.first; // current coverage (up to curr_cov)

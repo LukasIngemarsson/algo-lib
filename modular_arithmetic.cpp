@@ -5,7 +5,6 @@ using namespace std;
 typedef long long ll;
 #define SQRT_LL_MAX sqrt(LONG_MAX)
 
-/* A class for modular arithmetic operations. */
 struct ModularArithmetic {
 public:
     ll m; // the modulus

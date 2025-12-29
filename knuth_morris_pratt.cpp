@@ -2,19 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-@brief Finds each occurence of the given pattern in the given string, 
-using the Knuth-Morris-Pratt algorithm.
-
-@param s: The string.
-@param p: The pattern.
-
-@return A vector containing the start index of each occurence of the pattern.
-
-@note Time complexity: `O(n + m)`, where `n` is the length of the pattern and
-`m` is the length of the string.
-*/
-vector<int> find_pattern(string s, string p) {
+vector<int> knuth_morris_pratt(string s, string p) {
     int n = p.size();
 
     /* Precalculate the prefix vector which will contain the index to resume 

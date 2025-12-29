@@ -14,18 +14,6 @@ void dfs(int st, vector<vector<int>>& adj, vector<int>& output) {
     output.push_back(st);
 }
 
-/*
-@brief Identifies the Strongly Connected Components (SCCs) in the graph, 
-and creates the corresponding condensation graph.
-
-A subset of nodes `C` is called an SCC if 
-    1. for all `u`, `v` in `C` (`u` != `v`) there exists a path from `u` to `v` and from `v` to `u`, and
-    2. `C` is maximal, i.e., no node can be added without violating the above condition.
-
-@return A pair containing 1. the SCCs, and 2. the adjacency list of the condensation graph.
-
-@note Time complexity: `O(n + m)`, where `n` is the number of nodes and `m` is the number of edges.
-*/
 pair<vector<vector<int>>, vector<vector<int>>> scc(vector<vector<int>>& adj) {
     int n = adj.size();
     vector<int> order; 

@@ -10,11 +10,6 @@ struct Edge {
     Edge(int u, int v, int cap) : u(u), v(v), cap(cap) {}
 };
 
-/*
-@brief Dinic's algorithm. 
-Initialize with the number of nodes `n`, the source node `s`, and the sink node `t`.
-Populate the graph using `add_edge()`.
-*/
 struct Dinic {
     int n, s, t;
     vector<Edge> edges;
@@ -78,14 +73,6 @@ struct Dinic {
         return 0;
     }
 
-    /*
-    @brief Finds the maximum flow from the source node to the sink node using Dinic's algorithm.
-
-    @return The maximum flow.
-
-    @note Time complexity: `O(n ^ 2 * m)`, where `n` is the number of nodes and `m`
-    is the number of edges. For unit networks, this algorithm works in `O(sqrt(n) * m)`.
-    */
     int max_flow() {
         int tot_flow = 0;
         while (true) {

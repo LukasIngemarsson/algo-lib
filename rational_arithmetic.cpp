@@ -4,11 +4,6 @@ using namespace std;
 
 typedef long long ll;
 
-/*
-A class for rational numbers, supporting common arithmetic 
-operations and comparison operators. Initialization defaults
-to numerator = 0 and denominator = 1.
-*/
 struct RationalArithmetic {
     ll n, d;
 
