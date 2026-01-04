@@ -572,7 +572,7 @@ The algorithm works as follows:
 
 ### Strongly Connected Components
 
-@brief Identifies the Strongly Connected Components (SCCs) in the graph, and creates the corresponding condensation graph.
+@brief Kosaraju's algorithm. Identifies the Strongly Connected Components (SCCs) in the graph, and creates the corresponding condensation graph.
 
 A subset of nodes `C` is called an SCC if 1. for all `u`, `v` in `C` (`u` != `v`) there exists a path from `u` to `v` and from `v` to `u`, and 2. `C` is maximal, i.e., no node can be added without violating the above condition.
 
