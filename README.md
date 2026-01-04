@@ -1,6 +1,6 @@
 # Algo Lib
 
-A library containing competitive programming algorithms that I have implemented.
+A library containing competitive programming algorithms that I have implemented. Implementations are mostly in C++ but some alternative versions may appear from problems that I have solved in Python. 
 
 ## Documentation
 
