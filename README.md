@@ -29,6 +29,16 @@ The algorithm works as follows:
 - Then, we perform the same number of iterations again, to propogate the effect of any potential negative cycles.
 - Once the algorithm is finished, our distance vector tells us the shortest distance to each node from the start node, and the parent vector can be used to backtrack the shortest path to each node.
 
+### Bridges
+
+@brief Tarjan's bridge algorithm. Finds all bridges in the given undirected graph.
+
+@param adj: The graph's adjacency list.
+
+@return A vector containing node pairs of edges that are bridges, with each node pair in sorted order.
+
+@note Time complexity: `O(n + m)`, where `n` is the number of nodes and `m` is the number of edges.
+
 ### Chinese Remainder Theorem, Relative Prime
 
 @brief Applies the Chinese Remainder Theorem:
