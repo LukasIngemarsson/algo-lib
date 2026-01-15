@@ -560,7 +560,7 @@ The algorithm works as follows:
 
 @brief Returns if the given number is prime or not.
 
-@param The number to check.
+@param i: The number to check.
 
 @return A boolean value representing if the number is prime.
 
@@ -575,6 +575,8 @@ The algorithm works as follows:
 @brief Kosaraju's algorithm. Identifies the Strongly Connected Components (SCCs) in the graph, and creates the corresponding condensation graph.
 
 A subset of nodes `C` is called an SCC if 1. for all `u`, `v` in `C` (`u` != `v`) there exists a path from `u` to `v` and from `v` to `u`, and 2. `C` is maximal, i.e., no node can be added without violating the above condition.
+
+@param adj: The graph's adjacency list.
 
 @return A pair containing 1. the SCCs, and 2. the adjacency list of the condensation graph.
 
